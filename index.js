@@ -52,7 +52,7 @@ class ResourceController {
    * PUT or PATCH resources/:id
    */
   async update({ params, request, response, Model, model }) {
-    model.fill(request.all())
+    model.merge(request.all())
     await model.save()
     return model
   }
